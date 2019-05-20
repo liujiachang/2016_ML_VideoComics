@@ -29,6 +29,7 @@ def video2frame(video_src_path, frame_save_path, frame_width, frame_height, inte
         each_video_full_path = os.path.join(video_src_path, each_video)
 
         cap = cv2.VideoCapture(each_video_full_path)
+        # 保存视频里所有图片信息
         frame_index = 0
         frame_count = 0
         if cap.isOpened():
@@ -48,7 +49,6 @@ def video2frame(video_src_path, frame_save_path, frame_width, frame_height, inte
                 frame_count += 1
 
             frame_index += 1
-
     cap.release()		# 这行要缩一下、原博客会报错(全局变量与局部变量)
 
 def main():

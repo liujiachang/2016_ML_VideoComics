@@ -18,6 +18,7 @@ for i in range(len(frames_1)):
     img1 = cv2.imread(frame_src_path + '/' + str(i) + '.jpg')
     img1_new = cv2.resize(img1, (8, 8), interpolation=cv2.INTER_AREA)
     img1_new = cv2.cvtColor(img1_new, cv2.COLOR_BGR2GRAY)
+    # 灰度化处理
     if count == 0:
         cv2.imwrite(frame_save_path + '/' + "%d.jpg" % count, img1)
         count=count+1
