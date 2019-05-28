@@ -4,7 +4,8 @@ import numpy as np
 
 frame_src_path = "datasets/frames"
 frame_save_path = "datasets/keyframes"
-os.mkdir(frame_save_path)
+if not os.path.exists(frame_save_path):
+    os.mkdir(frame_save_path)
 frames_1 = os.listdir(frame_src_path)
 
 

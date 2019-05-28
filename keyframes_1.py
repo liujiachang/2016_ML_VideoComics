@@ -22,10 +22,9 @@ def video2frame(video_src_path, frame_save_path, frame_width, frame_height, inte
     videos = os.listdir(video_src_path)
 
     for each_video in videos:
-        # print "正在读取视频：", each_video
-        print("正在读取视频：", each_video)    # 我的是Python3.6
-
-        os.mkdir(frame_save_path)
+        print("正在读取视频：", each_video)
+        if not os.path.exists(frame_save_path):
+            os.mkdir(frame_save_path)
         each_video_full_path = os.path.join(video_src_path, each_video)
 
         cap = cv2.VideoCapture(each_video_full_path)
