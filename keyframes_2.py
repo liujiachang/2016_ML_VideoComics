@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 frame_src_path = "datasets/frames"
-frame_save_path = "datasets/keyframes"
+frame_save_path = "datasets/trainA"
 if not os.path.exists(frame_save_path):
     os.mkdir(frame_save_path)
 frames_1 = os.listdir(frame_src_path)
@@ -46,7 +46,7 @@ for i in range(len(frames_1)):
             for j in range(8):
                 if(t1_new[i][j]!=t2_new[i][j]):
                     k=k+1
-        print(k)
+        #print(k)
         if k>10:
             cv2.imwrite(frame_save_path + '/' + "%d.jpg" % count, img1)
             count = count + 1

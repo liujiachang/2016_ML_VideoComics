@@ -4,16 +4,14 @@ import cv2
 import numpy as np
 
 frame_src_path = "datasets/frames" #图片读取路径
-frame_save_path = "datasets/keyframes" #图片保存路径
+frame_save_path = "datasets/trainA" #图片保存路径
 if not os.path.exists(frame_save_path):
     os.mkdir(frame_save_path) #创建文件夹
 
-frames_1 = os.listdir(frame_src_path)
+frames = os.listdir(frame_src_path)
 
-count = 0
-index = 0
 X=[]
-for i in range(len(frames_1)):
+for i in range(len(frames)):
     print("---> 正在处理第%d张图片:" % index)
     index = index + 1
     img1 = cv2.imread(frame_src_path + '/' + str(i) + '.jpg')
@@ -24,7 +22,7 @@ for i in range(len(frames_1)):
     img = img.reshape(-1).tolist()
     X.append(img)
 #print(X)
-kmeans=KMeans(n_clusters=10,)
+kmeans=KMeans(n_clusters=10)
 kmeans.fit(X)
 Y=[i for i in range(len(kmeans.cluster_centers_))]
 #print(kmeans.cluster_centers_)
@@ -32,7 +30,7 @@ for i in range(len(kmeans.cluster_centers_)):
     m=99999
     for j in range(len(X)):
         img = np.array(X[j])
-        t=np.sqrt(np.sum(np.power(img-kmeans.cluster_centers_[i],2)))
+        t = np.sqrt(np.sum(np.power(img-kmeans.cluster_centers_[i],2)))
         if t<m:
             m=t
             Y[i]=j
