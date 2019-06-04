@@ -12,7 +12,7 @@ frames = os.listdir(frame_src_path)
 
 X=[]
 for i in range(len(frames)):
-    print("---> 正在处理第%d张图片:" % index)
+    print("---> 正在处理第%d张图片:" % i)
     index = index + 1
     img1 = cv2.imread(frame_src_path + '/' + str(i) + '.jpg')
     img1_new = cv2.resize(img1, (8, 8), interpolation=cv2.INTER_AREA)
@@ -71,6 +71,7 @@ print(Y)#打印一下图片编号数组
 for i in range(len(Y)):
     print("正在保存第",i,"张图片----：")
     img = cv2.imread(frame_src_path + '/' + str(Y[i]) + '.jpg')
+    img = cv2.resize(img, (256, 256), interpolation=cv2.INTER_AREA)
     cv2.imwrite(frame_save_path + '/' + "%d.jpg" % i, img)
 
 

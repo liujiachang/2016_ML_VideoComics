@@ -6,21 +6,18 @@ frame_src_path = "datasets/frames"
 frame_save_path = "datasets/trainA"
 if not os.path.exists(frame_save_path):
     os.mkdir(frame_save_path)
-frames_1 = os.listdir(frame_src_path)
-
+frames = os.listdir(frame_src_path)
 
 count = 0
-index = 0
 
-
-for i in range(len(frames_1)):
-    print("---> 正在处理第%d张图片:" % index)
-    index=index+1
+for i in range(len(frames)):
+    print("---> 正在处理第%d张图片:" % i)
     img1 = cv2.imread(frame_src_path + '/' + str(i) + '.jpg')
     img1_new = cv2.resize(img1, (8, 8), interpolation=cv2.INTER_AREA)
     img1_new = cv2.cvtColor(img1_new, cv2.COLOR_BGR2GRAY)
     # 灰度化处理
     if count == 0:
+        img1 = cv2.resize(img1, (256, 256), interpolation=cv2.INTER_AREA)
         cv2.imwrite(frame_save_path + '/' + "%d.jpg" % count, img1)
         count=count+1
     else:
@@ -48,6 +45,7 @@ for i in range(len(frames_1)):
                     k=k+1
         #print(k)
         if k>10:
+            img1 = cv2.resize(img1, (256, 256), interpolation=cv2.INTER_AREA)
             cv2.imwrite(frame_save_path + '/' + "%d.jpg" % count, img1)
             count = count + 1
 
