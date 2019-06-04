@@ -3,8 +3,8 @@ import numpy as np
 from PIL import Image
 
 
-image_width = 720 #宽
-image_height = 360 #高
+image_width = 256 #宽
+image_height = 256 #高
 image_channel = 3 #通道数
 
 # 读取数据到内存当中
@@ -41,7 +41,7 @@ def get_data(input_dir, floderA, floderB):
         # 对影像数据进行归一化[-1, 1]，并将结果保存到变量中
         dataA[i, :, :, :] = arr * 1.0 / 127.5 - 1.0
         #print(arr.shape)
-    #print(dataA.shape)
+    print(dataA.shape)
     # 读取文件夹B中的数据
     print("读取文件夹B中的数据")
     for i in range(imageB_len):
@@ -52,7 +52,7 @@ def get_data(input_dir, floderA, floderB):
         # 对影像数据进行归一化[-1, 1]，并将结果保存到变量中
         dataB[i, :, :, :] = arr * 1.0 / 127.5 - 1.0
         #print(arr.shape)
-
+    print(dataB.shape)
     return dataA, dataB
 
 #src = "datasets/"
