@@ -25,4 +25,5 @@
 ### 效果展示
 
 | test |
-| <img src='./image/test.jpg'> |
+ <img src='./image/test.jpg'> 
+
