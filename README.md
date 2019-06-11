@@ -24,6 +24,6 @@
 
 ### 效果展示
 
-| test |
- <img src='./image/test.jpg'> 
 
+| train_B | <img src='./image/test_result.jpg'> |
+|:-----:|:--------:|
