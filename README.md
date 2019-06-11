@@ -24,8 +24,5 @@
 
 ### 效果展示
 
-|  | 《星月夜》 |时光塔|  《星月夜》版时光塔   |
-|:---:|:-----:|:-----:|:--------:|
-| 展示  | <img src='./image/style_denoised_starry.jpg'> |
-| <img src='./image/timetower.jpg' width=400 height=256> |
-| <img src='./image/timetower_gen.jpg' width=400 height=256> |
+| test |
+| <img src='./image/test.jpg'> |
