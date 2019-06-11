@@ -2,10 +2,10 @@ import os
 import cv2
 
 videos_src_path = "datasets/mp4"
-frame_save_path = "datasets/frames"
-width = 720
-height = 480
-time_interval = 1
+videoframe_save_path = "datasets/frames"
+width = 720 #宽
+height = 480 #高
+time_interval = 2 #隔几帧取一次
 
 
 def video2frame(video_src_path, frame_save_path, frame_width, frame_height, interval):
@@ -49,9 +49,5 @@ def video2frame(video_src_path, frame_save_path, frame_width, frame_height, inte
             frame_index += 1
     cap.release()
 
-def main():
-    video2frame(videos_src_path, frame_save_path, width, height, time_interval)
-if __name__ == '__main__':
-    main()
 
 

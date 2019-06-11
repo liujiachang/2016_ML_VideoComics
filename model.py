@@ -24,7 +24,7 @@ def build_resnet_block(inputres, dim, name="resnet"):
         return tf.nn.relu(out_res + inputres)
 
 
-# 定义generator
+# 定义generator 生成器
 def build_generator_resnet_9blocks(inputgen, name="generator"):
     with tf.variable_scope(name):
         f = 7
@@ -66,5 +66,5 @@ def build_gen_discriminator(inputdisc, name="discriminator"):
         o_c3 = general_conv2d(o_c2, ndf * 4, f, f, 2, 2, 0.02, "SAME", "c3", relufactor=0.2)
         o_c4 = general_conv2d(o_c3, ndf * 8, f, f, 1, 1, 0.02, "SAME", "c4", relufactor=0.2)
         o_c5 = general_conv2d(o_c4, 1, f, f, 1, 1, 0.02, "SAME", "c5", do_norm=False, do_relu=False)
-
+        o_c5 = tf.nn.dropout(o_c5, keep_prob=0.7)
         return o_c5
