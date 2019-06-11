@@ -27,3 +27,4 @@
 | test |
  <img src='./image/test.jpg'> 
 
+ <img src='./image/d_A_loss.png'> 
