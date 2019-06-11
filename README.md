@@ -21,9 +21,3 @@
 * 刘西寅（主要负责编程环境的搭建和神经网络的训练过程）
   * github: https://github.com/liuxiyin
   * 电子邮箱：915709379@qq.com
-
-### 效果展示
-
-
-| train_B | <img src='./image/test_result.jpg'> |
-|:-----:|:--------:|
