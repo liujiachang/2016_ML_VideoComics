@@ -21,3 +21,25 @@
 * 刘西寅（主要负责编程环境的搭建和神经网络的训练过程）
   * github: https://github.com/liuxiyin
   * 电子邮箱：915709379@qq.com
+
+| train_A | <img src='./image/train_A_1.jpg'> |
+|:---:|:-----:|
+
+| train_B | <img src='./image/train_B_1.jpg'> |
+|:---:|:-----:|
+
+| test | <img src='./image/test.jpg'> |
+|:---:|:-----:|
+
+| train_epoch | <img src='./image/train_epoch_1.jpg'> |
+|:---:|:-----:|
+
+| test_result | <img src='./image/test_result.jpg'> |
+|:---:|:-----:|
+
+| d_A_loss | <img src='./image/d_A_loss.png'> | g_A_loss | <img src='./image/g_A_loss.png'> |
+|:---:|:-----:|:-----:|:-----:|
+
+| d_B_loss | <img src='./image/d_B_loss.png'> | g_B_loss | <img src='./image/g_B_loss.png'> |
+|:---:|:-----:|:-----:|:-----:|
+
