@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>VedioComic</title>
+	<style type="text/css">
+		.logo{
+			text-align: center;
+			margin-top:200px;
+		}
+		.intro{
+			text-align: center;
+		}
+		.upload{
+			margin-top: 50px;
+			text-align: center;
+		}
+		.file{
+			float: left;
+			padding-left: 700px;
+			padding-top: 10px;
+		}
+		
+		.button{
+			width: 150px;
+			float: right;
+			margin-right: 600px;
+    		align-items: center;
+    		height: 40px;
+    		padding: 0 20px;
+    		text-align: center;
+    		font-size: 13px;
+    		font-weight: 700;
+    		line-height: 40px;
+    		text-transform: uppercase;
+    		text-decoration: none;
+    		white-space: nowrap;
+    		cursor: pointer;
+    		box-sizing: border-box;
+    		user-select: none;
+    		letter-spacing: 1px;
+    		border: 0;
+    		border-radius: 20px;
+    		background-image: linear-gradient(98deg,#f5b53d,#de5f33);
+    		color: #fff;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="back">
+			<div>
+				<div class="logo">
+
+					<img src="{{static_url('img/logo.png')}}">
+
+				</div>
+				<div class="intro">
+					<h1>使&nbsp;用&nbsp;VedioComic&nbsp;将&nbsp;视&nbsp;频&nbsp;转&nbsp;化&nbsp;为&nbsp;漫&nbsp;画，并&nbsp;与&nbsp;朋&nbsp;友&nbsp;分&nbsp;享！</h1>
+				</div>
+			</div>
+			<div class="upload">
+				<form method="POST" action="/" enctype="multipart/form-data">
+					<div class="file">
+						<input type="file" name="file">
+					</div>
+					<input type="submit" class="get-a-comics button--big button" value="获取漫画">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
