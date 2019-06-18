@@ -6,6 +6,7 @@ import time
 from model import *
 from get_data import *
 
+to_train = False
 to_restore = False  # 设置为true继续训练
 output_path = "./output"  # 设置输出文件路径
 check_dir = "./output/checkpoints/"  # 输出模型参数的文件路径

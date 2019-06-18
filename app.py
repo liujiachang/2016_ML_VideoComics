@@ -27,8 +27,7 @@ app = Application() #实例化
 
 
 
-if __name__ == '__main__':   #当.py文件被直接运行时，代码块将被运行；当.py文件以模块形式被导入时，代码块不被运行。
-
+def web():  #当.py文件被直接运行时，代码块将被运行；当.py文件以模块形式被导入时，代码块不被运行。
     tornado.options.parse_command_line()
     app.listen(options.port)  ##如果一个与define语句中同名的设置在命令行中被给出，那么它将成为全局的options的一个属性 即 options.port 相当于define的url的port
     print("Server start on port {}".format(str(options.port)))  #提示服务启动占用端口

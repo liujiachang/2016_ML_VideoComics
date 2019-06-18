@@ -6,7 +6,7 @@ from keyframes_1 import *
 def fun():
     video2frame(videos_src_path, videoframe_save_path, width, height, time_interval)
     frame_src_path = "datasets/frames" #图片读取路径
-    frame_save_path = "datasets/trainA" #图片保存路径
+    frame_save_path = "static/source" #图片保存路径
     if not os.path.exists(frame_save_path):
         os.mkdir(frame_save_path) #创建文件夹
 
@@ -24,7 +24,7 @@ def fun():
         X[i] = img
 
     #print(X)
-    k = 100 # 聚类数量
+    k = 9 # 聚类数量
     kmeans=KMeans(n_clusters=k)
     kmeans.fit(X)
     Y=[i for i in range(k)]

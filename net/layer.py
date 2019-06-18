@@ -66,7 +66,7 @@ def general_deconv2d(inputconv, outshape, o_d=64, f_h=7, f_w=7, s_h=1, s_w=1, st
         return deconv
 
 
-# 定义image_pool函数 随机池化
+# 定义image_pool函数
 def fake_image_pool(num_fakes, fake, fake_pool):
     '''
     函数功能：将num_fakes张生成器生成的影像，保存到fake_pool中

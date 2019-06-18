@@ -1,6 +1,7 @@
 import tornado.web
 import os
 import glob
+from start import *
 
 class UploadHandler(tornado.web.RequestHandler):  #上传文件
     def get(self,*args,**kwargs):
@@ -15,7 +16,7 @@ class UploadHandler(tornado.web.RequestHandler):  #上传文件
             #以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。
             with open(save_to,'wb') as f: #二进制
                 f.write(file['body'])
-
+            start()
         self.redirect('/result')
 
 class ResultHandler(tornado.web.RequestHandler):

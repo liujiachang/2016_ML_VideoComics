@@ -1,23 +1,24 @@
 # 导入需要的库
 import skimage.io
-import tensorflow as tf
-import time
 # 导入自定义的函数
 from model import *
 from get_data import *
-to_test = False  # 不进行test
+from keyframes_1 import *
+
+to_start = False
 to_restore = False  # 设置为true恢复模型
-output_path = "./output"  # 设置输出文件路径
+
 check_dir = "./output/checkpoints/"  # 模型参数的保存路径
-data_dir = "./datasets"  # 数据的根目录
+data_dir = "static"  # 数据的根目录
 
 save_training_images = True
 
 # 定义训练过程
-def test():
+def start():
     # 读取数据
-    data_A, _ = get_data(data_dir, "/test", "/trainB")
-    with tf.variable_scope('Model'):
+    fun()
+    data_A = get_data(data_dir, "/source")
+    with tf.variable_scope('Model', reuse=tf.AUTO_REUSE):
         # 输入数据的占位符
         input_A = tf.placeholder(tf.float32, [batch_size, image_height, image_width, image_channel], name="input_A")
         # 建立生成器
@@ -34,17 +35,15 @@ def test():
         #print(checkpoint)
         saver.restore(sess, checkpoint)
 
-        if not os.path.exists(output_path):
-            os.makedirs(output_path)
         for i in range(len(data_A)):
             print("正在处理第%d张图片" %(i))
             fake = sess.run([fake_B],feed_dict={input_A: np.reshape(data_A[i], [-1, 256, 256, 3])})
             #print(fake[0].shape)
             if (save_training_images):
                 # 检查路径是否存在
-                if not os.path.exists("./output/res"):
-                    os.makedirs("./output/res")
+                if not os.path.exists("static/results"):
+                    os.makedirs("static/results")
                     # 保存10张影像
-                skimage.io.imsave("./output/res/fake_" + str(i) + ".jpg",
+                skimage.io.imsave("static/results/" + str(i) + ".jpg",
                                   np.reshape(((fake[0] + 1) * 127.5).astype(np.uint8), [256, 256, 3]))
                 # 保存图像结束------------------------------------------------------------
