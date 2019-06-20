@@ -41,7 +41,20 @@
 | d_B_loss | <img src='./image/d_B_loss.png'> | g_B_loss | <img src='./image/g_B_loss.png'> |
 |:---:|:-----:|:-----:|:-----:|
 
+| running_1 | <img src='./image/pic_1.png'> |
+|:---:|:-----:|
 
+| running_2 | <img src='./image/pic_2.png'> |
+|:---:|:-----:|
+
+| running_3 | <img src='./image/pic_3.png'> |
+|:---:|:-----:|
+
+| running_4 | <img src='./image/pic_4.jpg'> | running_5 | <img src='./image/pic_5.jpg'> |
+|:---:|:-----:|:-----:|:-----:|
+
+| running_6 | <img src='./image/pic_6.jpg'> |
+|:---:|:-----:|
 ### 项目主题
  
 基于对抗神经网络(gan)完成的风格转换。
